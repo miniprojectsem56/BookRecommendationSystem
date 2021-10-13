@@ -5,74 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:id="@+id/navigation_bar"
-        android:layout_height="100dp"
-        android:background="#B72000" >
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/menu"
-            android:alpha="0.6"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_margin="10dp"/>
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/camera"
-            android:alpha="0.6"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_margin="10dp"/>
-        <Button
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Index"
-            android:textAllCaps="false"
-            android:background="#00000000"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:fontFamily="sans-serif-medium"
-            android:layout_centerHorizontal="true"/>
 
-        <Button
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Explore"
-            android:textAllCaps="false"
-            android:background="#00000000"
-            android:fontFamily="sans-serif-medium"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"/>
-
-        <Button
-            android:id="@+id/button_id"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Contribute"
-            android:textAllCaps="false"
-            android:background="#00000000"
-            android:fontFamily="sans-serif-medium"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"/>
-
-    </RelativeLayout>
-    <!-- 2 -->
-    <RelativeLayout
+    <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/navigation_bar">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recommended"
-            android:textColor="@color/black"
-            android:padding="10dp"
-            android:fontFamily="sans-serif-medium"
-            android:textSize="16sp"/>
+        android:id="@+id/Tablayout"/>
 
-    </RelativeLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/Tablayout"
+        android:id="@+id/Viewpager2"
+        />
 
 </RelativeLayout>

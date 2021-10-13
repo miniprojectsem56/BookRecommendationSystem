@@ -3,6 +3,7 @@ package com.example.bookrecommendationsystem;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.adapter.RecyclerViewAdapter;
 import com.example.bookrecommendationsystem.databinding.FragmentFirstBinding;
 
 
@@ -19,7 +21,6 @@ public class FirstFragment extends Fragment {
     Button button;
     TextView textView;
     int cnt=0;
-
     FragmentFirstBinding binding;
 
     // TODO: Rename parameter arguments, choose names that match

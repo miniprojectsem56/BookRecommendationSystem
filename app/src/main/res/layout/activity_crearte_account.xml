@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearteAccountActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:paddingTop="50dp"
+        android:text="Create Account"
+        android:textSize="50dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="cursive"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter name:"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/name"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter email:"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:inputType="textEmailAddress"
+        android:id="@+id/email"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Create password:"
+        android:layout_margin="10dp"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/create_password"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm password:"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:inputType="textPassword"
+        android:id="@+id/confirm_password"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="Create account"
+        android:id="@+id/create_button"
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:drawableLeft="@drawable/googleg_standard_color_18"
+        android:text="Sign in with Google"
+        android:textColor="#000000"
+        app:backgroundTint="#A1A9BA" />
+
+</LinearLayout>

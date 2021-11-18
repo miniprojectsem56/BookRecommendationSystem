@@ -13,6 +13,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -73,6 +76,13 @@ public class MainActivity extends AppCompatActivity {
                 tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
+//
+//        if(!Python.isStarted())
+//            Python.start(new AndroidPlatform(this));
+//
+//        Python py=Python.getInstance();
+//        PyObject pyobj = py.getModule("miniproject");
+
     }
 
     @Override

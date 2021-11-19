@@ -35,6 +35,13 @@ android {
         python {
             buildPython "C:/Users/91721/AppData/Local/Programs/Python/Python39/python.exe"
             buildPython "C:/Windows/py.exe", "-3.8"
+
+            pip{
+                install "numpy"
+                install "pandas"
+                install "scikit-learn"
+            }
+
         }
 
     }

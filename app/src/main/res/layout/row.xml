@@ -11,7 +11,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/BookImage"
@@ -23,7 +23,7 @@
 
             <TextView
                 android:id="@+id/BookName"
-                android:layout_width="127dp"
+                android:layout_width="250sp"
                 android:layout_height="39dp"
                 android:gravity="center"
                 android:text="TextView"
@@ -35,7 +35,7 @@
 
             <TextView
                 android:id="@+id/BookAuthor"
-                android:layout_width="wrap_content"
+                android:layout_width="225sp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="TextView"

@@ -1,6 +1,7 @@
 package com.example.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bookrecommendationsystem.Book;
+import com.example.bookrecommendationsystem.MainActivity;
 import com.example.bookrecommendationsystem.R;
+import com.example.bookrecommendationsystem.ReadingBook;
+import com.example.bookrecommendationsystem.SecondFragment;
 
 import java.util.List;
 
@@ -39,6 +43,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Book book=bookList.get(position);
         holder.bookName.setText(book.getName());
         holder.bookAuthor.setText(book.getAuthor());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ReadingBook.class);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -58,8 +71,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             bookName=itemView.findViewById(R.id.BookName);
             bookAuthor=itemView.findViewById(R.id.BookAuthor);
             iconButton=itemView.findViewById(R.id.BookImage);
-
             iconButton.setOnClickListener(this);
+
         }
 
         @Override

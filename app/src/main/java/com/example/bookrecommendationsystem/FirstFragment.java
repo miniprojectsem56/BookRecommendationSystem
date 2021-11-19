@@ -14,15 +14,18 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.adapter.RecyclerViewAdapter;
 import com.example.bookrecommendationsystem.databinding.FragmentFirstBinding;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,6 +51,38 @@ public class FirstFragment extends Fragment {
         // Required empty public constructor
     }
 
+    String[][] fileRead(String fileName){
+        File file=new File(fileName);
+        int lineCount=0;
+        try {
+            //BufferedReader br = new BufferedReader(new FileReader(file));
+            BufferedReader br = new BufferedReader(new InputStreamReader(getActivity().getAssets().open(fileName)));
+            String st;
+            while((st=br.readLine())!=null){
+                //System.out.println(st);
+                lineCount++;
+            }
+        }catch (Exception e){
+            System.out.println("not possible");
+        }
+        //Toast.makeText(getApplicationContext().getApplicationContext(), lineCount+"",Toast.LENGTH_LONG).show();
+        String[][]allData=new String[lineCount][];
+        int lineNumber=0;
+        try {
+            //BufferedReader br = new BufferedReader(new FileReader(file));
+            BufferedReader br = new BufferedReader(new InputStreamReader(getActivity().getAssets().open(fileName)));
+            String st;
+            while((st=br.readLine())!=null){
+                Log.d("checking",st);
+                allData[lineNumber]=st.split(">");
+                lineNumber++;
+            }
+        }catch (Exception e){
+            System.out.println("not possible");
+        }
+        return  allData;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -58,51 +93,20 @@ public class FirstFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-
-        AssetManager am = getContext().getAssets();
-        int t=10;
-        BufferedReader reader = null;
-        try {
-            reader = new BufferedReader(new FileReader(String.valueOf(am.open("books.csv"))));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        List<String> lines = new ArrayList<>();
-        String line = null;
-        while (t!=0) {
-            t--;
-            try {
-                if (!((line = reader.readLine()) != null)) break;
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            lines.add(line);
-            Log.d("Line",line);
-        }
-        t--;
+        String [][] books_displaying = fileRead("bookColumns.txt");
 
         bookArrayList=new ArrayList<Book>();
 
-
-//        try
-//        {
-//            InputStream is = am.open("books - books.csv");
-//            BufferedReader br = new BufferedReader(InputStream);
-//
-//        }
-//        catch (IOException e)
-//        {
-//            e.printStackTrace();
+//        for(int i=0;i<10;i++) {
+//            bookArrayList.add(new Book("2 States","Cheatan Bhagat"));
+//            bookArrayList.add(new Book("Gravity","Brahmagupta"));
 //        }
 
-
-
-        for(int i=0;i<10;i++) {
-            bookArrayList.add(new Book("2 States","Cheatan Bhagat"));
-            bookArrayList.add(new Book("Gravity","Brahmagupta"));
+        for(int i=0;i<20;i++)
+        {
+            bookArrayList.add(new Book(books_displaying[i][1],books_displaying[i][2]));
         }
+
         recyclerViewAdapter=new RecyclerViewAdapter(getActivity(),bookArrayList);
         recyclerView.setAdapter(recyclerViewAdapter);
 

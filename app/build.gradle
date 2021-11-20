@@ -40,6 +40,7 @@ android {
                 install "numpy"
                 install "pandas"
                 install "scikit-learn"
+                install "google"
             }
 
         }
@@ -59,6 +60,10 @@ android {
     }
     buildFeatures {
         viewBinding true
+    }
+    dependenciesInfo {
+        includeInApk true
+        includeInBundle true
     }
 }
 

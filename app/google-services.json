@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "273525891886",
+    "project_id": "bookrecommendationsystem-b70db",
+    "storage_bucket": "bookrecommendationsystem-b70db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273525891886:android:ba80ca9ca175829f8950bf",
+        "android_client_info": {
+          "package_name": "com.example.bookrecommendationsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273525891886-fu715458703o2q21q8j9f52s7sl6m393.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuFz7axlVdPaDiP43SSCUrBrtDOpglKZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273525891886-fu715458703o2q21q8j9f52s7sl6m393.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
